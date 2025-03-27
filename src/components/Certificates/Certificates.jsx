@@ -4,7 +4,7 @@ import Navbar from "../Navbar";
 import Heading from "../Heading";
 import CertificateForm from "./CertificateForm";
 import CertificateList from "./CertificateList";
-import CertificateFilters from "./CertificateFilters";
+import CertificateFilters from "./certificateFilters";
 
 // Sample initial data if localStorage is empty
 const INITIAL_CERTIFICATES = [
