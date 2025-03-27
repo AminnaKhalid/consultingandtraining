@@ -4,7 +4,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Students from "./components/Students/Students";
 import Certificates from "./components/Certificates/Certificates";
 import Login from "./components/Login/Login";
-import ViewCertificate from "./components/Certificates/ViewCertificate";
+import ViewCertificate from "./components/Certificates/Viewcertificate";
 import StudentDetail from "./components/Students/StudentDetail";
 
 function App() {
