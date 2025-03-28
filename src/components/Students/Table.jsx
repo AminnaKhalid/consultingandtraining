@@ -84,25 +84,25 @@ const Table = () => {
         {studentData.map((student) => (
           <div
             key={student.id}
-            className="flex bg-white w-full border-b border-gray-300 transition-colors justify-between"
+            className="flex bg-white w-full border-b border-gray-200 transition-colors justify-between"
           >
             <Link
               to="/StudentDetail"
-              className="w-[224px] h-[69px] px-6 py-4 border-r border-gray-300 text-sm text-black font-medium flex items-center"
+              className="w-[224px] h-[69px] px-6 py-4 border-r border-gray-200 text-sm text-black font-medium flex items-center"
             >
               <img src={profile} alt="" className="w-8 h-8 mr-3" />
               {student.name}
             </Link>
-            <div className="w-[224px] h-[69px] px-6 py-4 border-r border-gray-300 text-sm text-black flex items-center justify-center font-medium">
+            <div className="w-[224px] h-[69px] px-6 py-4 border-r border-gray-200 text-sm text-black flex items-center justify-center font-medium">
               {student.email}
             </div>
-            <div className="w-[224px] h-[69px] px-6 py-4 border-r border-gray-300 text-sm text-black flex items-center justify-center font-medium">
+            <div className="w-[224px] h-[69px] px-6 py-4 border-r border-gray-200 text-sm text-black flex items-center justify-center font-medium">
               {student.phonenumber}
             </div>
-            <div className="w-[224px] h-[69px] px-6 py-4 border-r border-gray-300 text-sm text-black flex items-center justify-center font-medium">
+            <div className="w-[224px] h-[69px] px-6 py-4 border-r border-gray-200 text-sm text-black flex items-center justify-center font-medium">
               {student.studentid}
             </div>
-            <div className="w-[224px] h-[69px] px-6 py-4 border-r border-gray-300 text-sm text-black flex items-center justify-center font-medium">
+            <div className="w-[224px] h-[69px] px-6 py-4 border-r border-gray-200 text-sm text-black flex items-center justify-center font-medium">
               <button
                 type="button"
                 className="flex items-center justify-center w-full"
