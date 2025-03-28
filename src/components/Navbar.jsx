@@ -5,8 +5,8 @@ import student from "../assets/student.png";
 import certificate from "../assets/certificate.png";
 import logout from "../assets/logout .png";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
-import logoutModal from "../assets/logoutmodal.png"
+import { Link, useLocation } from "react-router-dom";
+import logoutModal from "../assets/logoutmodal.png";
 
 const menuItems = [
   { icon: dashboard, label: "Dashboard", path: "/Dashboard" },
@@ -18,6 +18,7 @@ const Navbar = () => {
   const sidebarRef = useRef(null);
   const [open, setIsOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -68,13 +69,23 @@ const Navbar = () => {
               <img src={logo} alt="Logo" className="mb-8" />
 
               {menuItems.map((item, index) => (
-                <div
+                <Link
+                  to={item.path}
                   key={index}
-                  className="flex flex-row items-center text-center w-full gap-2 my-3 hover:bg-gray-200/30 py-3 px-2 hover:rounded-sm"
+                  className={`flex flex-row items-center text-center w-full gap-2 my-3 py-3 px-2 relative 
+                    ${
+                      location.pathname === item.path
+                        ? "bg-gray-200/30 rounded-sm"
+                        : "hover:bg-gray-200/30 hover:rounded-sm"
+                    }`}
                 >
+                  {/* Active indicator bar */}
+                  {location.pathname === item.path && (
+                    <div className="absolute -left-6 h-12 w-[4px] bg-[#FFFFFF] rounded-r-sm"></div>
+                  )}
                   <img src={item.icon} alt="" className="h-6 w-6 mx-3" />
                   <div className="text-white text-md">{item.label}</div>
-                </div>
+                </Link>
               ))}
             </div>
 
@@ -95,15 +106,24 @@ const Navbar = () => {
 
       {/* Sidebar for Desktop */}
       <div className="hidden md:flex flex-col justify-between min-h-screen w-[270px] bg-gradient-to-b from-[#FBBF00] via-[#F48700] to-[#EC4700] px-6 py-6">
-        <div className="flex flex-col  justify-center">
+        <div className="flex flex-col justify-center">
           <img src={logo} alt="" className="mb-8" />
 
           {menuItems.map((item, index) => (
             <Link
               to={item.path}
               key={index}
-              className="flex flex-row items-center text-center w-full gap-2 my-3 hover:bg-gray-200/30 py-3 px-2 hover:rounded-sm"
+              className={`flex flex-row items-center text-center w-full gap-2 my-3 py-3 px-2 relative 
+                ${
+                  location.pathname === item.path
+                    ? "bg-gray-200/30 rounded-sm"
+                    : "hover:bg-gray-200/30 hover:rounded-sm"
+                }`}
             >
+              {/* Active indicator bar */}
+              {location.pathname === item.path && (
+                <div className="absolute -left-6 h-12 w-[4px] bg-[#FFFFFF] rounded-r-sm"></div>
+              )}
               <img src={item.icon} alt="" className="h-6 w-6 mx-3" />
               <div className="text-white text-md">{item.label}</div>
             </Link>
@@ -125,28 +145,17 @@ const Navbar = () => {
       {modalOpen && (
         <div className="flex items-center justify-center inset-0 fixed bg-black/50 z-50 p-5 md:p-0">
           <div className="bg-white p-6 rounded-lg w-full max-w-md">
-            {/* Image: Centered and half-outside using negative margin-top */}
             <div className="flex justify-center -mt-16">
-              {" "}
-              {/* Negative margin pulls image up */}
-              <img
-                src={logoutModal}
-                alt=""
-                className="h-30 w-30" // Adjust size as needed
-              />
+              <img src={logoutModal} alt="" className="h-30 w-30" />
             </div>
 
-            {/* Modal Content */}
             <div className="flex flex-col items-center justify-center mt-4">
-              {" "}
-              {/* Compensate for image space */}
               <span className="font-medium text-3xl text-black">Logout</span>
               <span className="font-[400] text-2xl text-[#8C959A]">
                 Are you sure you want to logout?
               </span>
             </div>
 
-            {/* Buttons */}
             <div className="grid grid-cols-2 gap-4 mt-6 text-center">
               <button
                 onClick={() => setModalOpen(false)}

@@ -2,6 +2,7 @@ import React from "react";
 import background from "./assests/Loginbg.png";
 import passwordicon from "./assests/passwordicon.png";
 import LeftArrow from "./assests/LeftArrow.png";
+import { Link } from "react-router-dom";
 const ForgetPassword = () => {
   return (
     <>
@@ -36,7 +37,8 @@ const ForgetPassword = () => {
             >
               Send Reset Instructions
             </button>
-            <button
+            <Link
+              to="/"
               type="button"
               className="mx-2 my-2 w-full relative  bg-transparent text-black py-3 px-3 rounded-xl text-md  border-[2px] border-gray-300 flex items-center justify-center"
             >
@@ -46,7 +48,7 @@ const ForgetPassword = () => {
                 className="h-8 w-8 absolute left-50"
               />
               Go Back
-            </button>
+            </Link>
             <div className="m-2 text-gray-400">
               If you don't see your reset email be sure to check your spam
               filter for an email from{" "}

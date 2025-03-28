@@ -67,9 +67,12 @@ const Login = () => {
               <span>Remember Me</span>
             </label>
 
-            <div className="text-orange-500 cursor-pointer">
+            <Link
+              to="/ForgetPassword"
+              className="text-orange-500 cursor-pointer"
+            >
               Forgot Password
-            </div>
+            </Link>
           </div>
 
           <Link

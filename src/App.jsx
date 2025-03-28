@@ -6,6 +6,7 @@ import Certificates from "./components/Certificates/Certificates";
 import Login from "./components/Login/Login";
 import ViewCertificate from "./components/Certificates/Viewcertificate";
 import StudentDetail from "./components/Students/StudentDetail";
+import ForgetPassword from "./components/Login/ForgetPassword"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/students" element={<Students />} />
+            <Route path="/ForgetPassword" element={<ForgetPassword />} />
             <Route path="/certificates" element={<Certificates />} />
             <Route path="/certificates/active" element={<Certificates />} />
             <Route path="/certificates/expired" element={<Certificates />} />

@@ -134,13 +134,13 @@ const CertificateForm = ({ onClose, onAddCertificate }) => {
             <button
               type="button"
               onClick={onClose}
-              className="bg-white text-black font-medium text-lg px-4 py-2 rounded-md border border-gray-200 transition hover:bg-gray-50"
+              className="bg-white text-black font-medium text-md px-4 py-2 rounded-md border border-gray-200 transition hover:bg-gray-50"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="bg-gradient-to-b from-[#FBBF00] via-[#F48700] to-[#EC4700] font-medium text-lg text-white px-4 py-2 rounded-md hover:opacity-90"
+              className="bg-gradient-to-b from-[#FBBF00] via-[#F48700] to-[#EC4700] font-medium text-md text-white px-4 py-2 rounded-md hover:opacity-90"
             >
               Add Certificate
             </button>
